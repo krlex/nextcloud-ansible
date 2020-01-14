@@ -3,16 +3,16 @@ Nextcloud (Latest)
 
 Ansible Playbook to install
 
-* Nextcloud (Latest) - <https://nextcloud.com/>
-* nginx 1.17 - <https://nginx.org/>
-* PHP 7.x - <http://www.php.net/>
-* MariaDB 10 - <https://mariadb.org/> or PostgreSQL 10 <https://www.postgresql.org/>
-* redis - <https://redis.io/>
-* restic backup - <https://restic.readthedocs.io>
+* https://nextcloud.com/ Nextcloud (Latest)
+* https://nginx.org/ nginx 1.17
+* http://www.php.net/ PHP 7.x
+* https://mariadb.org/ MariaDB 10  or https://www.postgresql.org/ PostgreSQL 10
+* https://redis.io/ redis
+* https://restic.readthedocs.io restic backup
 * Nextcloud Talk
-* Collabora Online <https://www.collaboraoffice.com/>
+* https://www.collaboraoffice.com/ Collabora Online
 or
-* Onlyoffice <https://www.onlyoffice.com>
+* https://www.onlyoffice.com Onlyoffice
 
 In less than 20 minutes.
 
