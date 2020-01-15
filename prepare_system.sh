@@ -77,12 +77,12 @@ prepare_centos() {
 }
 
 prepare_fedora() {
-        $SUDO dnf install git vim mc curl facter libselinux-python python python3 python3-dnf -y
+        $SUDO dnf install git vim mc curl facter libselinux-python python python-dnf -y
         $SUDO dnf update -y
 
         PYTHON_BIN=/usr/bin/python
         install_pip
-        $SUDO dnf reinstall python3-pip -y
+        $SUDO dnf reinstall python-pip -y
 
         set +x
         echo
