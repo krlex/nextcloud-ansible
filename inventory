@@ -1,0 +1,93 @@
+[nextcloud]
+localhost ansible_connection=local
+
+[nextcloud:vars]
+
+# Server domain name
+# Default is the fqdn of the machine
+# fqdn       = nc.example.org
+
+# selfsigned certificate as default
+ssl_certificate_type  = 'selfsigned'
+
+# Letsencrypt or selfsigned certificate
+# ssl_certificate_type  = 'letsencrypt'
+
+
+# Your email adresse for letsencrypt
+# cert_email = nc@example.org
+
+# receive a certificate from staging
+# uncomment if you want to use letsencrypt staging environment
+# cert_stage = '--staging'
+
+#
+# Nextcloud varibales
+
+# web ports
+nc_web_port          = 80
+nc_ssl_port          = 443
+
+# data dir
+nc_datadir           = /var/nc-data
+
+# admin user
+nc_admin             = 'admin'
+nc_passwd            = 'admin'             # leave empty to generate random password
+
+# database settings
+# nc_db_type          = 'mysql'        # (MariaDB)
+nc_db_type           = 'pgsql'        # (PostgreSQL)
+nc_db_host           = 'localhost'
+nc_db                = 'nextcloud'
+nc_db_user           = 'nextcloud'
+nc_db_passwd         = 'password'             # leave empty to generate random password
+nc_db_prefix         = 'oc_'
+
+# Nextcloud mail setup
+nc_configure_mail    = false
+nc_mail_from         =
+nc_mail_smtpmode     = smtp
+nc_mail_smtpauthtype = LOGIN
+nc_mail_domain       =
+nc_mail_smtpname     =
+nc_mail_smtpsecure   = tls
+nc_mail_smtpauth     = 1
+nc_mail_smtphost     =
+nc_mail_smtpport     = 587
+nc_mail_smtpname     =
+nc_mail_smtppwd      =
+
+# php Version
+php_version          = '7.3'
+
+# Install turn server for Nextcloud Talk
+talk_install         = false
+
+# Allways get the latest version of Nextcloud
+next_archive         = https://download.nextcloud.com/server/releases/latest.tar.bz2
+
+# Install restic backup tool if backup_folder is not empty
+# more info about restic: https://restic.readthedocs.io/en/latest/
+# to use a local directory as a restic repository (not a good idea anyway)
+restic_repo          = ''   # e.g. '/var/backups/nextcloud'
+
+# use rclone to backup a cloud storage, see https://rclone.org for more details
+# configure also rclone_remote in group_vars/all.yml
+# restic_repo         = "rclone:backup-selfhosted:selfhosted-{{ lookup('password', '{{ credential_store }}/restic_backup_s3_bucket_uid chars=ascii_lowercase,digits length=12') }}/backup"
+
+# crontab setings for the backup script - default daily at 3pm
+restic_backup_day    = '*'
+restic_backup_minute = '0'
+restic_backup_hour:  = '3'
+
+# Install Collabra Online
+install_collabora     = false
+
+# Install Online Office
+install_onlyoffice    = false
+onlyoffice_ssl_port   = 8443
+
+#
+# defaults path of your generated credentials (e.g. database, talk, onlyoffice)
+credential_store      = /etc/nextcloud
