@@ -1,0 +1,47 @@
+---
+# Some common variables used in more then roles
+ 
+web_user:
+  CentOS: 'nginx'
+  Fedora: 'nginx'
+  Amazon: 'nginx'
+  Ubuntu: 'www-data'
+  Debian: 'www-data'
+
+web_group:
+  CentOS: 'nginx'
+  Fedora: 'nginx'
+  Amazon: 'nginx'
+  Ubuntu: 'www-data'
+  Debian: 'www-data'
+
+pg_user_id:
+  CentOS: '70'
+  Fedora: '70'
+  Amazon: '70'
+  Ubuntu: '70'
+  Debian: '70'
+
+pg_group_id:
+  CentOS: '70'
+  Fedora: '70'
+  Amazon: '70'
+  Ubuntu: '70'
+  Debian: '70'
+
+credential_store: /etc/nextcloud
+dhparam_path:     /etc/nginx/certs/dhparam.pem
+
+# example of rclone config to backup to a s3 bucket
+
+#rclone_remote: |
+#      [backup-selfhosted]
+#      type = s3
+#      provider = AWS
+#      env_auth = false
+#      access_key_id = AKIxxxxx
+#      secret_access_key = QMpoxxxx
+#      region = us-east-1
+#      acl = private
+#      server_side_encryption = AES256
+#      storage_class = STANDARD_IA
