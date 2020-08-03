@@ -5,23 +5,23 @@
 
 install_pip () {
         curl https://bootstrap.pypa.io/get-pip.py | $SUDO $PYTHON_BIN
-        $SUDO pip install setuptools -U
-        $SUDO pip install ansible -U
-        $SUDO pip install netaddr -U
-        $SUDO pip install dnspython -U
-        $SUDO pip install passlib -U
-        $SUDO pip install bcrypt -U
+        $SUDO pip3 install setuptools -U
+        $SUDO pip3 install ansible -U
+        $SUDO pip3 install netaddr -U
+        $SUDO pip3 install dnspython -U
+        $SUDO pip3 install passlib -U
+        $SUDO pip3 install bcrypt -U
 }
 
 prepare_ubuntu() {
         $SUDO apt update -y
         $SUDO apt dist-upgrade -y
-        $SUDO apt install software-properties-common curl git mc vim facter python python-apt aptitude -y
-        [ $(uname -m) == "aarch64" ] && $SUDO apt install gcc python-dev libffi-dev libssl-dev make -y
+        $SUDO apt install software-properties-common curl git mc vim facter python3-pip python3-apt aptitude -y
+        [ $(uname -m) == "aarch64" ] && $SUDO apt install gcc python3-dev libffi-dev libssl-dev make -y
 
-        PYTHON_BIN=/usr/bin/python
+        PYTHON_BIN=/usr/bin/python3
         install_pip
-        $SUDO pip install python-apt -U
+        $SUDO pip3 install python-apt -U
 
         set +x
         echo
@@ -33,10 +33,10 @@ prepare_ubuntu() {
 prepare_debian() {
         $SUDO apt update -y
         $SUDO apt dist-upgrade -y
-        $SUDO apt install dirmngr curl git mc vim facter python python-apt aptitude -y
-        [ $(uname -m) == "aarch64" ] && $SUDO apt install gcc python-dev libffi-dev libssl-dev make -y
+        $SUDO apt install dirmngr curl git mc vim facter python3 python3-pip python3-apt aptitude -y
+        [ $(uname -m) == "aarch64" ] && $SUDO apt install gcc python3-dev libffi-dev libssl-dev make -y
 
-        PYTHON_BIN=/usr/bin/python
+        PYTHON_BIN=/usr/bin/python3
         install_pip
         $SUDO pip3 install python-apt -U
 
@@ -51,7 +51,7 @@ prepare_raspbian() {
         $SUDO apt update -y
         $SUDO apt dist-upgrade -y
         $SUDO apt install dirmngr mc vim git libffi-dev curl facter -y
-        PYTHON_BIN=/usr/bin/python
+        PYTHON_BIN=/usr/bin/python3
         install_pip
 
         set +x
