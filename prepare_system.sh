@@ -25,7 +25,7 @@ prepare_ubuntu() {
 
         set +x
         echo
-        echo "   Ubuntu Sytem ready for nextcloud."
+        echo "   Ubuntu System ready for nextcloud."
         echo
         ansible --version
 }
@@ -42,7 +42,7 @@ prepare_debian() {
 
         set +x
         echo
-        echo "   Debian Sytem ready for nextcloud."
+        echo "   Debian System ready for nextcloud."
         echo
         ansible --version
 }
@@ -71,7 +71,7 @@ prepare_centos() {
 
         set +x
         echo
-        echo "   CentOS Sytem ready for nextcloud."
+        echo "   CentOS System ready for nextcloud."
         echo
         ansible --version
 }
@@ -86,7 +86,7 @@ prepare_fedora() {
 
         set +x
         echo
-        echo "   Fedora Sytem ready for nextcloud."
+        echo "   Fedora System ready for nextcloud."
         echo
         ansible --version
 }
